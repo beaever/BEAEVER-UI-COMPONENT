@@ -4,8 +4,9 @@
     "types": ["node"],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "jsx", "tsx", "ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
