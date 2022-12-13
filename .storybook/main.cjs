@@ -1,15 +1,14 @@
-const { loadConfigFromFile, mergeConfig } = require('vite');
+const path = require('path');
 
 module.exports = {
-  async viteFinal(config, { configType }) {
-    const { config: userConfig } = await loadConfigFromFile(
-      path.resolve(__dirname, '../vite.config.ts')
-    );
+  viteFinal: async (config, { configType }) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@src': path.resolve(__dirname, '../src'),
+      '@components': path.resolve(__dirname, '../src/components'),
+      '@styles': path.resolve(__dirname, '../src/styles'),
+    };
 
-    return mergeConfig(config, {
-      ...userConfig,
-      // manually specify plugins to avoid conflict
-      plugins: [],
-    });
+    return config;
   },
 };
