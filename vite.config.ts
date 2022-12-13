@@ -12,7 +12,6 @@ export default defineConfig({
             '@emotion/babel-plugin',
             {
               autoLabel: 'dev-only',
-              labelFormat: '[dirname]--[filename]--[local]___',
             },
           ],
         ],
