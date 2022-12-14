@@ -7,6 +7,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
+    "module": "ESNext",
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -15,11 +16,18 @@
     "jsxImportSource": "@emotion/react",
     "incremental": true,
     "baseUrl": "pages",
-    "paths": {},
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "rootDir": ".",
     "strictNullChecks": false,
-    "types": ["vite-plugin-svgr/client", "@emotion/react/types/css-prop"]
+    "types": [
+      "node",
+      "vite-plugin-svgr/client",
+      "@emotion/react/types/css-prop"
+    ]
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["src", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
