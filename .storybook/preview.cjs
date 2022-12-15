@@ -1,7 +1,7 @@
-import { inirtialize, mswDecorator } from 'msw-storybook-addon';
+import { mswDecorator } from 'msw-storybook-addon';
 
 // MSW 초기화 함수 실행
-inirtialize();
+// inirtialize();
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
