@@ -1,25 +1,6 @@
 import React from 'react';
 import { Global, css } from '@emotion/react';
 
-const GlobalStyle = () => {
-  /** 모바일에서 chrome, safari 100vh 이슈로 script로 100vh를 계산하는 함수
-   * [사용법]
-   *
-   * div{
-   *  height: 100vh;
-   *  height: calc(var(--vh, 1vh) * 100)
-   * }
-   *
-   */
-  function setScreenSize() {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
-  React.useEffect(() => {
-    setScreenSize();
-  });
-  return <Global styles={style} />;
-};
 const style = css`
   // Reset CSS
   :root {
@@ -30,6 +11,11 @@ const style = css`
   }
   * {
     -webkit-tap-highlight-color: transparent;
+    &,
+    ::after,
+    ::before {
+      box-sizing: border-box;
+    }
   }
   html,
   body,
@@ -116,12 +102,7 @@ const style = css`
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border-box;
-    /* color: #000; */
-    /* line-height: 1.2; */
-    letter-spacing: -0.36px;
-    /* // font-family: 'pretendard-regular';
-    font-family: 'Pretendard'; */
+    line-height: 24px;
     font-weight: 400;
   }
 
@@ -139,7 +120,6 @@ const style = css`
   section {
     display: block;
   }
-
   a {
     display: inline-block;
     text-decoration: none;
@@ -220,5 +200,25 @@ const style = css`
     text-overflow: ellipsis;
   }
 `;
+
+const GlobalStyle = () => {
+  /** 모바일에서 chrome, safari 100vh 이슈로 script로 100vh를 계산하는 함수
+   * [사용법]
+   *
+   * div{
+   *  height: 100vh;
+   *  height: calc(var(--vh, 1vh) * 100)
+   * }
+   *
+   */
+  function setScreenSize() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+  React.useEffect(() => {
+    setScreenSize();
+  });
+  return <Global styles={style} />;
+};
 
 export default GlobalStyle;
