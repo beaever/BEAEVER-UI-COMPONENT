@@ -15,9 +15,15 @@
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "incremental": true,
-    "baseUrl": "pages",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@src/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@general/*": ["src/general/*"],
+      "@assets/*": ["public/assets/*"],
+      "@types/*": ["src/types/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@styles/*": ["src/general/styles/*"]
     },
     "rootDir": ".",
     "strictNullChecks": false,

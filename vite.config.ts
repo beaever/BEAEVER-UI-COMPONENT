@@ -22,6 +22,10 @@ export default defineConfig({
     alias: {
       '@src': path.resolve('src/'),
       '@components': path.resolve('src/components'),
+      '@hooks': path.resolve('src/hooks'),
+      '@styles': path.resolve('src/styles'),
+      '@general': path.resolve('src/components/general'),
+      '@layout': path.resolve('src/components/layout'),
     },
   },
 });
