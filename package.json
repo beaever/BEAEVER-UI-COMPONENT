@@ -10,7 +10,8 @@
     "preview": "vite preview --port 8000",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "sdks": "yarn dlx @yarnpkg/sdks vscode"
+    "sdks": "yarn dlx @yarnpkg/sdks vscode",
+    "doctor": "yarn dlx @yarnpkg/doctor"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
