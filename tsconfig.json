@@ -3,6 +3,7 @@
     "target": "es6",
     "lib": ["dom", "dom.iterable"],
     "allowJs": true,
+    "isolatedModules": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -11,7 +12,6 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "incremental": true,
@@ -19,21 +19,21 @@
     "paths": {
       "@src/*": ["src/*"],
       "@components/*": ["src/components/*"],
-      "@general/*": ["src/general/*"],
-      "@assets/*": ["public/assets/*"],
-      "@types/*": ["src/types/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@styles/*": ["src/general/styles/*"]
+      "@styles/*": ["src/general/styles/*"],
+      "@general/*": ["src/general/*"],
+      "@layout/*": ["src/layout/*"]
     },
     "rootDir": ".",
     "strictNullChecks": false,
     "types": [
       "node",
+      "vite/client",
       "vite-plugin-svgr/client",
       "@emotion/react/types/css-prop"
     ]
   },
-  "include": ["src", "**/*.ts", "**/*.tsx"],
+  "include": ["src", "custom.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
