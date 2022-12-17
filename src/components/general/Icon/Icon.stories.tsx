@@ -1,6 +1,7 @@
 import { ComponentMeta } from '@storybook/react';
+import * as icons from './svg';
 import { css } from '@emotion/react';
-import { Icon, IconProps } from './Icon';
+import { Icon, IconProps, IconType } from './Icon';
 
 const layout = css`
   display: flex;
@@ -14,6 +15,12 @@ export default {
   title: 'general/Icon',
   component: Icon,
   argTypes: {
+    icon: {
+      control: {
+        type: 'select',
+        options: icons,
+      },
+    },
     color: {
       control: 'color',
     },
@@ -23,7 +30,7 @@ export default {
 export const Base = (args: IconProps) => {
   return (
     <div css={layout}>
-      <Icon {...args} />
+      <Icon {...args} icon='icAlert' />
     </div>
   );
 };

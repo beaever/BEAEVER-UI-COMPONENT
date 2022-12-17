@@ -50,8 +50,8 @@ const SVGIcon = ({ icon }: IconProps) => React.createElement(icons[icon]);
 export const Icon = ({
   icon,
   rotate = 0,
-  width,
-  height,
+  width = '20px',
+  height = '20px',
   color = 'black',
   className,
 }: IconBoxProps) => {
