@@ -34,4 +34,7 @@ export default defineConfig({
       '@layout': path.resolve('src/components/layout'),
     },
   },
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
+  },
 });
