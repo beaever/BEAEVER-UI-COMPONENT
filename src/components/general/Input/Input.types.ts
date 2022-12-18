@@ -26,6 +26,9 @@ export interface InputProps {
 
   /** input의 setState */
   setState: React.Dispatch<SetStateAction<string>>;
+<<<<<<< HEAD
 
   /** 자동완성 검색 박스의 데이터 */
+=======
+>>>>>>> 7fcfe4c6 ( [Input])
 }
