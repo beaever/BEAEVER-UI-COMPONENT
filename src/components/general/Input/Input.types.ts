@@ -1,7 +1,10 @@
 import React, { SetStateAction } from 'react';
 
 export type InputModeType = 'input' | 'search';
-
+export interface AutoSearchDataProps {
+  key: string | number;
+  content: string;
+}
 export interface InputProps {
   /** change Event */
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -23,4 +26,6 @@ export interface InputProps {
 
   /** input의 setState */
   setState: React.Dispatch<SetStateAction<string>>;
+
+  /** 자동완성 검색 박스의 데이터 */
 }
