@@ -14,22 +14,24 @@ const Input = ({
   const testRef = useRef<HTMLInputElement | null>(null);
 
   return (
-    <div className={className} css={styles.inputWrapperStyle(mode, value)}>
-      {mode === 'search' && (
+    <div className={className} css={styles.wrapperStyle}>
+      <div css={styles.inputWrapperStyle(value, mode)}>
+        {mode === 'search' && (
+          <div css={styles.inconStyle}>
+            <div>검색</div>
+          </div>
+        )}
+        <input
+          ref={testRef}
+          css={styles.inputStyle}
+          onChange={onChange}
+          type={type}
+          name={name}
+          value={value}
+        />
         <div css={styles.inconStyle}>
-          <div>아</div>
+          {value.length >= 1 && <div onClick={() => setState('')}>X</div>}
         </div>
-      )}
-      <input
-        ref={testRef}
-        css={styles.inputStyle}
-        onChange={onChange}
-        type={type}
-        name={name}
-        value={value}
-      />
-      <div css={styles.inconStyle}>
-        {value.length >= 1 && <div onClick={() => setState('')}>X</div>}
       </div>
     </div>
   );

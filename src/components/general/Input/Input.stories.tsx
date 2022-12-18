@@ -17,7 +17,7 @@ export const Base = (args: any) => {
     setInput(e.target.value);
   };
   const test = css`
-    width: 300px;
+    width: 500px;
   `;
 
   return (
