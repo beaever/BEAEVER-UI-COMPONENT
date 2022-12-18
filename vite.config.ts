@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import svgr from 'vite-plugin-svgr';
 import path from 'path';
 
 export default defineConfig({
@@ -17,6 +18,11 @@ export default defineConfig({
         ],
       },
     }),
+    svgr({
+      svgrOptions: {
+        icon: true,
+      },
+    }),
   ],
   resolve: {
     alias: {
@@ -27,5 +33,8 @@ export default defineConfig({
       '@general': path.resolve('src/components/general'),
       '@layout': path.resolve('src/components/layout'),
     },
+  },
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
   },
 });
