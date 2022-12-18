@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { Colors } from '@src/styles/themes';
+import { Colors } from 'styles/themes';
 import { AutoSearchDataProps, InputModeType } from './Input.types';
 
 export const wrapperStyle = css`
