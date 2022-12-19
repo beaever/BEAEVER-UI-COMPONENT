@@ -32,6 +32,7 @@ module.exports = {
       '@src': path.resolve(__dirname, '../src'),
       '@components': path.resolve(__dirname, '../src/components'),
       '@styles': path.resolve(__dirname, '../src/styles'),
+      '@general': path.resolve(__dirname, '../src/components/general'),
     };
 
     config.plugins.push(
@@ -44,7 +45,7 @@ module.exports = {
       })
     );
 
-    return mergeConfig(config, {
+    mergeConfig(config, {
       ...userConfig,
       // manually specify plugins to avoid conflict
       plugins: [
