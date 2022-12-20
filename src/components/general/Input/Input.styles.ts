@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
-import { Colors } from '@src/styles/themes';
-import { AutoSearchDataProps, InputModeType } from './Input.types';
+import { Colors } from '../../../styles/themes';
+import { InputModeType } from './Input.types';
 
 export const wrapperStyle = css`
   display: flex;
@@ -33,6 +33,9 @@ export const inconStyle = css`
   display: flex;
   justify-content: center;
   align-items: center;
+  .input-close-icon {
+    cursor: pointer;
+  }
 `;
 
 export const searchBoxWrapperStyle = css`

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { InputProps } from './Input.types';
 import * as styles from './Input.styles';
+import { Icon } from '../Icon';
 
 const Input = ({
   onChange,
@@ -9,28 +10,32 @@ const Input = ({
   name,
   mode = 'search',
   value,
-  setState,
+  onClickDelete,
 }: InputProps) => {
-  const testRef = useRef<HTMLInputElement | null>(null);
-
   return (
     <div className={className} css={styles.wrapperStyle}>
       <div css={styles.inputWrapperStyle(value, mode)}>
         {mode === 'search' && (
           <div css={styles.inconStyle}>
-            <div>검색</div>
+            <Icon width='16px' height='16px' icon='icSearch' color='#ffff' />
           </div>
         )}
         <input
-          ref={testRef}
           css={styles.inputStyle}
           onChange={onChange}
           type={type}
           name={name}
           value={value}
         />
-        <div css={styles.inconStyle}>
-          {value.length >= 1 && <div onClick={() => setState('')}>X</div>}
+        <div onClick={onClickDelete} css={styles.inconStyle}>
+          {value.length >= 1 && (
+            <Icon
+              className='input-close-icon'
+              width='10px'
+              height='10px'
+              icon='icPopupClose'
+            />
+          )}
         </div>
       </div>
     </div>
