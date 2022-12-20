@@ -24,8 +24,7 @@ export interface InputProps {
   /** input의 value */
   value: string;
 
-  /** input의 setState */
-  setState: React.Dispatch<SetStateAction<string>>;
-
-  /** 자동완성 검색 박스의 데이터 */
+  // /** input의 setState */
+  // setState: React.Dispatch<SetStateAction<string>>;
+  onClickDelete: () => void;
 }
