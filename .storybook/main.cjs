@@ -42,6 +42,11 @@ module.exports = {
         babel: {
           plugins: ['@emotion/babel-plugin'],
         },
+      }),
+      svgr({
+        svgrOptions: {
+          icon: true,
+        },
       })
     );
 
@@ -49,6 +54,13 @@ module.exports = {
       ...userConfig,
       // manually specify plugins to avoid conflict
       plugins: [
+        react({
+          exclude: [/\.stories\.(t|j)sx?$/, /node_modules/],
+          jsxImportSource: '@emotion/react',
+          babel: {
+            plugins: ['@emotion/babel-plugin'],
+          },
+        }),
         svgr({
           svgrOptions: {
             icon: true,
