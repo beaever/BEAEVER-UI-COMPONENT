@@ -23,8 +23,5 @@ export interface InputProps {
 
   /** input의 value */
   value: string;
-
-  // /** input의 setState */
-  // setState: React.Dispatch<SetStateAction<string>>;
   onClickDelete: () => void;
 }
